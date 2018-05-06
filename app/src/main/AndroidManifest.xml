@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.okunan.tunahan.mycriminalintent">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+                     android:maxSdkVersion="18"/>
+    <uses-feature android:name="android.hardware.camera"
+                  android:required="false"
+        />
+
+    <application
+        android:name="com.activeandroid.app.Application"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        >
+        <meta-data
+            android:name="AA_DB_NAME" android:value="Criminal.db"/>
+        <meta-data
+            android:name="AA_DB_VERSION" android:value="1"/>
+        <meta-data android:name="AA_MODELS" android:value="com.okunan.tunahan.mycriminalintent.Crime" />
+
+        <meta-data android:name="AA_SERIALIZERS"
+                   android:value="com.activeandroid.serializer.UUIDSerializer" />
+
+        <activity android:name=".CrimePagerActivity"
+            android:parentActivityName=".CrimeListActivity"
+            >
+
+        </activity>
+        <activity android:name=".CrimeListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+
+    </application>
+
+</manifest>
